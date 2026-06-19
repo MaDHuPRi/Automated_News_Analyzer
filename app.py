@@ -11,6 +11,12 @@ from transformers import (
 from nltk.sentiment import SentimentIntensityAnalyzer
 from newspaper import Article
 import numpy as np
+import nltk
+
+try:
+    nltk.data.find("sentiment/vader_lexicon.zip")
+except LookupError:
+    nltk.download("vader_lexicon")
 
 # ── PAGE CONFIG ────────────────────────────────────────────────────────────────
 st.set_page_config(
